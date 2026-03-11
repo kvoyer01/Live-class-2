@@ -59,7 +59,7 @@
                 includesText: 'Includes:',
                 features: ['No credit card required', 'Limited Agent requests', 'Limited Tab completions'],
                 buttonText: 'Download',
-                buttonVariant: 'secondary',
+                buttonVariant: 'outline',
             };
             const proPlan = {
                 title: 'Pro',
@@ -72,9 +72,34 @@
                     'Maximum context windows',
                 ],
                 buttonText: 'Get Pro',
+                buttonVariant: 'secondary',
+            };
+            const organisationPlan = {
+                title: 'Organisation',
+                price: '$100/mo.',
+                includesText: 'Everything in Pro, plus:',
+                features: [
+                    'Extended limits on Agent',
+                    'Unlimited Tab completions',
+                    'Background Agents',
+                    'Maximum context windows',
+                ],
+                buttonText: 'Get Organisation',
                 buttonVariant: 'primary',
             };
-
+            const enterprisePlan = {
+                title: 'Enterprise',
+                price: '$1000/mo.',
+                includesText: 'Everything in Organisation, plus:',
+                features: [
+                    'Extended limits on Agent',
+                    'Unlimited Tab completions',
+                    'Background Agents',
+                    'Maximum context windows',
+                ],
+                buttonText: 'Get Enterprise',
+                buttonVariant: 'glass',
+            };
             return (
                 // <> is a React Fragment - it groups elements without adding extra HTML divs
                 <>
@@ -84,6 +109,8 @@
                         {/* This is the same as writing: title="Hobby" price="Free" includesText="Includes:" etc. */}
                         <PricingCard {...hobbyPlan} />
                         <PricingCard {...proPlan} />
+                        <PricingCard {...organisationPlan} />
+                        <PricingCard {...enterprisePlan} />
                     </div>
                 </>
             );
@@ -95,3 +122,4 @@
     </script>
 </body>
 </html>
+ 
