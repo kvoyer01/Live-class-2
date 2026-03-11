@@ -1,9 +1,11 @@
+/* Global reset so spacing is consistent across browsers */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Page background, typography, and centering of the pricing cards */
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-color: #f7f7f4;
@@ -14,6 +16,7 @@ body {
     padding: 20px;
 }
 
+/* Horizontal layout for the two pricing cards */
 .cards-container {
     display: flex;
     flex-direction: row;
@@ -23,6 +26,7 @@ body {
     align-items: flex-start;
 }
 
+/* Shared card shell: background, padding, and minimum height */
 .card {
     display: flex;
     flex-direction: column;
@@ -34,11 +38,13 @@ body {
     flex-shrink: 0;
 }
 
+/* Stack title, price, and feature content vertically */
 .card-top {
     display: flex;
     flex-direction: column;
 }
 
+/* Plan name styling */
 .card-title {
     font-size: 22px;
     line-height: 28px;
@@ -47,6 +53,7 @@ body {
     margin-bottom: 8px;
 }
 
+/* Wrapper for price and period so they align nicely */
 .card-price {
     font-size: 20px;
     color: rgba(38, 37, 30, 0.5);
@@ -54,32 +61,38 @@ body {
     align-items: baseline;
 }
 
+/* Main price number (e.g. “$20” or “Free”) */
 .card-price-amount {
     font-size: 22px;
     font-weight: 400;
     color: rgba(38, 37, 30, 0.5);
 }
 
+/* Secondary price detail (e.g. “/mo.”) */
 .card-price-period {
     font-size: 14px;
     color: rgba(38, 37, 30, 0.5);
 }
 
+/* Space between feature list and the button below */
 .card-content {
     margin-bottom: 32px;
 }
 
+/* Small lead‑in label above each feature list */
 .includes-text {
     font-size: 16px;
     color: rgba(38, 37, 30, 0.5);
     margin: 16px 0px;
 }
 
+/* Remove default bullets; layout is handled manually */
 .features-list {
     list-style: none;
     padding: 0;
 }
 
+/* Each feature row is aligned with the checkmark icon */
 .features-list li {
     display: flex;
     align-items: center;
@@ -88,6 +101,7 @@ body {
     color: #26251e;
 }
 
+/* Checkmark icon styling to keep spacing and weight consistent */
 .checkmark {
     color: #26251e;
     font-size: 14px;
@@ -95,6 +109,7 @@ body {
     font-weight: 400;
 }
 
+/* Base button styling shared by both Hobby and Pro actions */
 .download-button {
     margin-top: auto;
     width: fit-content;
@@ -109,6 +124,7 @@ body {
     transition: background-color 0.2s ease;
 }
 
+/* Hover and active states for the neutral button style */
 .download-button:hover {
     background-color: #D8D6CE;
 }
@@ -117,6 +133,7 @@ body {
     background-color: #D8D6CE;
 }
 
+/* Primary button variation used on the Pro plan */
 .download-button.primary {
     background-color: #111;
     color: #fff;
@@ -130,6 +147,7 @@ body {
     background-color: #333;
 }
 
+/* Fixed pill label that sits at the top center of the viewport */
 .page-label {
     position: fixed;
     top: 16px;
@@ -143,6 +161,7 @@ body {
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
+/* Slight emphasis on the “HTML version” text inside the label */
 .page-label strong {
     color: #333;
 }
