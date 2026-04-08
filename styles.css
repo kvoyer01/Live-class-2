@@ -1,9 +1,16 @@
+/*
+ * Pricing page (HTML static) — visual tokens and layout for index.html.
+ * Sections below follow page structure: reset → page shell → cards → type → lists → CTAs → label.
+ */
+
+/* Reset: consistent box model; strip default margins/padding on all elements. */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Page shell: Inter stack, warm gray background, centered content, comfortable viewport padding. */
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-color: #f7f7f4;
@@ -14,15 +21,17 @@ body {
     padding: 20px;
 }
 
+/* Card row: horizontal flex, fixed gap; wraps on narrow viewports when three cards no longer fit. */
 .cards-container {
     display: flex;
     flex-direction: row;
     gap: 24px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
 }
 
+/* Single plan card: fixed width, rounded panel, column stack; min-height keeps card bottoms aligned. */
 .card {
     display: flex;
     flex-direction: column;
@@ -34,11 +43,13 @@ body {
     flex-shrink: 0;
 }
 
+/* Upper card block: title, price, and feature list (button sits below in the column). */
 .card-top {
     display: flex;
     flex-direction: column;
 }
 
+/* Plan name: largest heading on the card; dark text, light weight. */
 .card-title {
     font-size: 22px;
     line-height: 28px;
@@ -47,6 +58,7 @@ body {
     margin-bottom: 8px;
 }
 
+/* Price row: baseline-aligned so amount and “/mo.” sit on one visual line. */
 .card-price {
     font-size: 20px;
     color: rgba(38, 37, 30, 0.5);
@@ -54,32 +66,38 @@ body {
     align-items: baseline;
 }
 
+/* Main price figure (or “Free”): slightly larger than supporting text. */
 .card-price-amount {
     font-size: 22px;
     font-weight: 400;
     color: rgba(38, 37, 30, 0.5);
 }
 
+/* Billing suffix (e.g. /mo.): smaller type, same muted color family. */
 .card-price-period {
     font-size: 14px;
     color: rgba(38, 37, 30, 0.5);
 }
 
+/* Wraps “Includes” line + bullet list; bottom margin separates content from the button. */
 .card-content {
     margin-bottom: 32px;
 }
 
+/* Section label above the feature list: muted, with vertical rhythm vs. title/price. */
 .includes-text {
     font-size: 16px;
     color: rgba(38, 37, 30, 0.5);
     margin: 16px 0px;
 }
 
+/* Feature bullets: no default bullets; spacing controlled per row below. */
 .features-list {
     list-style: none;
     padding: 0;
 }
 
+/* Each feature: flex row so the checkmark and text align; dark body copy color. */
 .features-list li {
     display: flex;
     align-items: center;
@@ -88,6 +106,7 @@ body {
     color: #26251e;
 }
 
+/* Check glyph before each line: fixed gap to label text. */
 .checkmark {
     color: #26251e;
     font-size: 14px;
@@ -95,6 +114,7 @@ body {
     font-weight: 400;
 }
 
+/* Base CTA: pill shape, neutral fill; margin-top:auto pins it to the card bottom in the flex column. */
 .download-button {
     margin-top: auto;
     width: fit-content;
@@ -109,6 +129,7 @@ body {
     transition: background-color 0.2s ease;
 }
 
+/* Hover/active: slightly darker neutral for feedback (Hobby / secondary). */
 .download-button:hover {
     background-color: #D8D6CE;
 }
@@ -117,11 +138,13 @@ body {
     background-color: #D8D6CE;
 }
 
+/* Pro CTA: inverted colors (dark fill, light text). */
 .download-button.primary {
     background-color: #111;
     color: #fff;
 }
 
+/* Primary hover/active: lighten the black slightly. */
 .download-button.primary:hover {
     background-color: #333;
 }
@@ -130,6 +153,7 @@ body {
     background-color: #333;
 }
 
+/* Top “HTML version” chip: fixed to viewport top-center; subtle shadow reads as a floating label. */
 .page-label {
     position: fixed;
     top: 16px;
@@ -143,6 +167,7 @@ body {
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
+/* Emphasis inside the chip: darker text for the variant name. */
 .page-label strong {
     color: #333;
 }
