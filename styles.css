@@ -1,9 +1,17 @@
+/* ==========================================================================
+   BASE — Reset
+   Normalizes box model so padding doesn’t blow up widths.
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ==========================================================================
+   PAGE — Canvas
+   Full-viewport centered column; page background and default typeface.
+   ========================================================================== */
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-color: #f7f7f4;
@@ -14,15 +22,24 @@ body {
     padding: 20px;
 }
 
+/* ==========================================================================
+   LAYOUT — Card row
+   Horizontal flex row; gap = space between cards. wrap keeps extra cards
+   from overflowing narrow viewports.
+   ========================================================================== */
 .cards-container {
     display: flex;
     flex-direction: row;
     gap: 24px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
 }
 
+/* ==========================================================================
+   COMPONENT — Card shell
+   One pricing column: min height, radius, padding, fixed width.
+   ========================================================================== */
 .card {
     display: flex;
     flex-direction: column;
@@ -34,11 +51,13 @@ body {
     flex-shrink: 0;
 }
 
+/* Card body stack: title → price → features (button sits below via flex). */
 .card-top {
     display: flex;
     flex-direction: column;
 }
 
+/* Plan name — largest text in the card header. */
 .card-title {
     font-size: 22px;
     line-height: 28px;
@@ -47,6 +66,7 @@ body {
     margin-bottom: 8px;
 }
 
+/* Price line — amount + optional period share one baseline row. */
 .card-price {
     font-size: 20px;
     color: rgba(38, 37, 30, 0.5);
@@ -60,21 +80,25 @@ body {
     color: rgba(38, 37, 30, 0.5);
 }
 
+/* “/mo.” — smaller, muted; pairs with .card-price-amount. */
 .card-price-period {
     font-size: 14px;
     color: rgba(38, 37, 30, 0.5);
 }
 
+/* Features block — spacing above the CTA. */
 .card-content {
     margin-bottom: 32px;
 }
 
+/* “Includes:” / lead-in — secondary copy color. */
 .includes-text {
     font-size: 16px;
     color: rgba(38, 37, 30, 0.5);
     margin: 16px 0px;
 }
 
+/* Bullet list — no default bullets; rows are flex for check + text. */
 .features-list {
     list-style: none;
     padding: 0;
@@ -88,6 +112,7 @@ body {
     color: #26251e;
 }
 
+/* Check glyph — fixed width feel via margin-right. */
 .checkmark {
     color: #26251e;
     font-size: 14px;
@@ -95,6 +120,11 @@ body {
     font-weight: 400;
 }
 
+/* ==========================================================================
+   COMPONENT — CTAs
+   Pill buttons; .primary = dark filled; default = light filled.
+   margin-top: auto pins button to card bottom when content height differs.
+   ========================================================================== */
 .download-button {
     margin-top: auto;
     width: fit-content;
@@ -130,6 +160,10 @@ body {
     background-color: #333;
 }
 
+/* ==========================================================================
+   OVERLAY — Demo label
+   Fixed top-center pill; separate from pricing spec (typography-only tweak).
+   ========================================================================== */
 .page-label {
     position: fixed;
     top: 16px;
