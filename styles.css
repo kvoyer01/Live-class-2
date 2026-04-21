@@ -1,9 +1,13 @@
+/* ===== Global reset ===== */
+/* Normalizes spacing and keeps width/height calculations predictable. */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ===== Page frame ===== */
+/* Centers the pricing cards and applies the base typeface/background. */
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-color: #f7f7f4;
@@ -14,15 +18,19 @@ body {
     padding: 20px;
 }
 
+/* ===== Card layout container ===== */
+/* Places plan cards in one row with a fixed gap. */
 .cards-container {
     display: flex;
     flex-direction: row;
-    gap: 24px;
+    gap: 20px;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: flex-start;
 }
 
+/* ===== Card shell ===== */
+/* Shared card box: size, spacing, and background. */
 .card {
     display: flex;
     flex-direction: column;
@@ -30,15 +38,17 @@ body {
     background-color: #f2f1ed;
     border-radius: 4px;
     padding: 16px;
-    width: 320px;
+    width: 300px;
     flex-shrink: 0;
 }
 
+/* Card upper section (title, price, features). */
 .card-top {
     display: flex;
     flex-direction: column;
 }
 
+/* Plan name style (Hobby / Pro). */
 .card-title {
     font-size: 22px;
     line-height: 28px;
@@ -47,6 +57,7 @@ body {
     margin-bottom: 8px;
 }
 
+/* Price row layout and default color tone. */
 .card-price {
     font-size: 20px;
     color: rgba(38, 37, 30, 0.5);
@@ -54,32 +65,38 @@ body {
     align-items: baseline;
 }
 
+/* Main price value style (e.g., Free, $20). */
 .card-price-amount {
     font-size: 22px;
     font-weight: 400;
     color: rgba(38, 37, 30, 0.5);
 }
 
+/* Smaller billing period label (e.g., /mo.). */
 .card-price-period {
     font-size: 14px;
     color: rgba(38, 37, 30, 0.5);
 }
 
+/* Spacing below the feature section before button. */
 .card-content {
     margin-bottom: 32px;
 }
 
+/* Intro text above each feature list. */
 .includes-text {
     font-size: 16px;
     color: rgba(38, 37, 30, 0.5);
     margin: 16px 0px;
 }
 
+/* Removes default bullets for custom list icons. */
 .features-list {
     list-style: none;
     padding: 0;
 }
 
+/* Single feature line: icon + text alignment. */
 .features-list li {
     display: flex;
     align-items: center;
@@ -88,6 +105,7 @@ body {
     color: #26251e;
 }
 
+/* Checkmark icon style used in feature items. */
 .checkmark {
     color: #26251e;
     font-size: 14px;
@@ -95,6 +113,8 @@ body {
     font-weight: 400;
 }
 
+/* ===== Base button style ===== */
+/* Shared shape/spacing used by both CTA variants. */
 .download-button {
     margin-top: auto;
     width: fit-content;
@@ -109,27 +129,34 @@ body {
     transition: background-color 0.2s ease;
 }
 
+/* Neutral button hover state. */
 .download-button:hover {
     background-color: #D8D6CE;
 }
 
+/* Neutral button pressed state. */
 .download-button:active {
     background-color: #D8D6CE;
 }
 
+/* Primary CTA variant (dark theme). */
 .download-button.primary {
     background-color: #111;
     color: #fff;
 }
 
+/* Primary CTA hover state. */
 .download-button.primary:hover {
     background-color: #333;
 }
 
+/* Primary CTA pressed state. */
 .download-button.primary:active {
     background-color: #333;
 }
 
+/* ===== Preview label ===== */
+/* Fixed helper tag shown at the top center. */
 .page-label {
     position: fixed;
     top: 16px;
@@ -143,6 +170,7 @@ body {
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
+/* Emphasized text style inside the helper tag. */
 .page-label strong {
     color: #333;
 }
